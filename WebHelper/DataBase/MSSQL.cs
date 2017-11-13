@@ -20,6 +20,8 @@ namespace WebHelper.DataBase
 
         private  string ConnStr = "";
         private string _Message = ""; 
+
+
         // 连接数据源
         private SqlConnection con = null;
         private OleDbConnection conn = null;
@@ -77,7 +79,7 @@ namespace WebHelper.DataBase
             /// </summary>
             access,
             /// <summary>
-            /// access数据库
+            /// oracle
             /// </summary>
             oracle
 
