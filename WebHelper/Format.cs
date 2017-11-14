@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace WebHelper.HTML
+namespace WebHelper
 {
     public class Format
     {

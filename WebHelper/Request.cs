@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace WebHelper.Request
+namespace WebHelper
 {
     public class Request
     {
@@ -43,7 +43,7 @@ namespace WebHelper.Request
 
                 str = replaceString(str);
 
-                str = HTML.Format.EndCode(str);
+                str = Format.EndCode(str);
             }
             else
             {
@@ -69,7 +69,7 @@ namespace WebHelper.Request
 
                 str = replaceString(r.GetValue(0).ToString().Replace("'", "''").Trim());
 
-                str = HTML.Format.EndCode(str);
+                str = Format.EndCode(str);
                 return str;
             }
             else if (r.Length > 1)
@@ -89,7 +89,7 @@ namespace WebHelper.Request
 
                 rStr = replaceString(rStr);
 
-                rStr = HTML.Format.EndCode(rStr);
+                rStr = Format.EndCode(rStr);
 
                 return rStr;
             }

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using WebHelper;
 using System.Data;
 using System.Configuration;
+ 
 
 
 namespace WebHelperTest
@@ -15,33 +16,37 @@ namespace WebHelperTest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string id = WebHelper.Request.Request.get("id");
+            
 
-            Response.Write("id:" + id);
+            string id = WebHelper.Request.get("id");
 
-            WebHelper.DataBase.MSSQL db = new WebHelper.DataBase.MSSQL();
+            //Response.Write("id:" + id);
+
+            WebHelper.DataBase db = new WebHelper.DataBase();
 
             DataTable dt = db.DataTable("select * from Blog");
+ 
 
+            
             if (db.Message != "")
             {
-                Response.Write("<br>Message:" + db.Message);
+                //Response.Write("<br>Message:" + db.Message);
             }
 
-            string str = "<table border='1'>";
+            string str = "<table  class='table table-bordered table-hove'>";
             foreach(DataRow dr in dt.Rows)
             {
-                str += "<tr><td>"+dr["cName"]+ "</td><td>" + dr["dcdate"] + "</td></tr>";
+                str += "<tr><td width='30px'>"+dr["cName"]+ "</td><td>" + dr["dcdate"] + "</td></tr>";
             }
             str += "</table>";
 
-            Response.Write("<br>" + str);
+            //Response.Write("<br>" + str);
 
 
 
             string ConnStr1 = ConfigurationManager.AppSettings["ConnStr1"];
 
-            Response.Write("ConnStr1:" + ConnStr1);
+            //Response.Write("ConnStr1:" + ConnStr1);
 
 
         }

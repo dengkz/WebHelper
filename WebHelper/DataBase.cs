@@ -10,16 +10,16 @@ using System.IO;
 using System.Web;
 using System.Collections;
 
-namespace WebHelper.DataBase
+namespace WebHelper
 {
-    public class MSSQL
+    public class DataBase
     {
-        public  readonly string ConnStr1 = ConfigurationManager.AppSettings["ConnStr1"];
-        public  readonly string ConnStr2 = ConfigurationManager.AppSettings["ConnStr2"];
+        public readonly string ConnStr1 = ConfigurationManager.AppSettings["ConnStr1"];
+        public readonly string ConnStr2 = ConfigurationManager.AppSettings["ConnStr2"];
 
-            
-        private  string ConnStr = "";
-        private string _Message = ""; 
+
+        private string ConnStr = "";
+        private string _Message = "";
 
 
         // 连接数据源
@@ -29,7 +29,7 @@ namespace WebHelper.DataBase
         private DB dbType = DB.mssql;
         public int iCommandTimeout = 20;
 
-        public MSSQL(DB db , string connStr)
+        public DataBase(DB db, string connStr)
         {
             ConnStr = connStr;
 
@@ -39,7 +39,7 @@ namespace WebHelper.DataBase
                 conn = new OleDbConnection(ConnStr);
         }
 
-        public MSSQL(DB db)
+        public DataBase(DB db)
         {
             ConnStr = ConnStr1;
 
@@ -49,7 +49,7 @@ namespace WebHelper.DataBase
                 conn = new OleDbConnection(ConnStr);
         }
 
-        public MSSQL()
+        public DataBase()
         {
             ConnStr = ConnStr1;
             dbType = DB.mssql;
@@ -293,14 +293,11 @@ namespace WebHelper.DataBase
             if (ds != null)
             {
                 tb = ds.Tables["tempTable"];
-            } 
+            }
 
 
             return tb;
         }
-
-
-
 
 
 
