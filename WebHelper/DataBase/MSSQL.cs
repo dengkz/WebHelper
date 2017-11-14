@@ -17,7 +17,7 @@ namespace WebHelper.DataBase
         public  readonly string ConnStr1 = ConfigurationManager.AppSettings["ConnStr1"];
         public  readonly string ConnStr2 = ConfigurationManager.AppSettings["ConnStr2"];
 
-
+            
         private  string ConnStr = "";
         private string _Message = ""; 
 
